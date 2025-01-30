@@ -1,38 +1,84 @@
-.App {
-  text-align: center;
+.container {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(13, 1fr);
+  grid-template-rows: repeat(21, 1fr);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.headLine {
+  grid-column: 2 / 7;
+  grid-row: 2;
+  font-size: 1.3rem;
+  font-weight: bold;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.meme {
+  font-size: 0.95rem;
+  grid-column: 3 / 12;
+  grid-row: 5;
   display: flex;
-  flex-direction: column;
+  justify-content: space-around;
   align-items: center;
+}
+
+.meme > label,
+.textBottom > label,
+.textTop > label {
+  min-width: 35%;
+}
+
+.meme input,
+.textTop input,
+.textBottom input {
+  flex-grow: 1;
+  border: solid black 0.09rem;
+  line-height: 1.3rem;
+  border-radius: 0.5rem;
+  max-width: 70%;
+}
+
+.textTop {
+  font-size: 0.95rem;
+
+  grid-column: 3 / 12;
+  grid-row: 3;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.textBottom {
+  font-size: 0.95rem;
+
+  grid-column: 3 / 12;
+  grid-row: 4;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.imageContainer {
+  grid-column: 3 / 12;
+  grid-row: 6 / 18;
+
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+}
+
+.imageContainer img {
+  max-height: 90%;
+  max-width: 100%;
+}
+
+.downLoad {
+  display: block;
+  background-color: black;
   color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  font-weight: bold;
+  grid-column: 6 / 9;
+  grid-row: 18 / 19;
+  max-width: 100%;
+  border-radius: 0.5rem;
+  cursor: pointer;
 }
