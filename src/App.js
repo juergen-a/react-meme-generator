@@ -85,46 +85,48 @@ export default function App() {
     /// Return JSX-elements
 
     <div className="container">
-      <div className="headLine">Meme generator</div>
+      <div className="containerInner">
+        <div className="headLine">Meme generator</div>
 
-      <div className="textTop">
-        <label htmlFor="textTop">Top text</label>
+        <div className="textTop">
+          <label htmlFor="textTop">Top text</label>
 
-        <input
-          name="textTop"
-          value={textTop}
-          onChange={(event) => setTextTop(event.currentTarget.value)}
-        />
+          <input
+            name="textTop"
+            value={textTop}
+            onChange={(event) => setTextTop(event.currentTarget.value)}
+          />
+        </div>
+
+        <div className="textBottom">
+          <label htmlFor="textBottom">Bottom text</label>
+
+          <input
+            name="textBottom"
+            value={textBottom}
+            onChange={(event) => setTextBottom(event.currentTarget.value)}
+          />
+        </div>
+
+        <div className="meme">
+          <label htmlFor="memeTemplate">Meme template</label>
+
+          <input
+            name="memeTemplate"
+            value={memeId}
+            onChange={(event) => setMemeId(event.currentTarget.value)}
+            onKeyDown={handleKeyDown}
+          />
+        </div>
+
+        <div className="imageContainer">
+          <img src={urlImage} alt="" data-test-id="meme-image" />
+        </div>
+
+        <button className="downLoad" onClick={handleDownload}>
+          Download
+        </button>
       </div>
-
-      <div className="textBottom">
-        <label htmlFor="textBottom">Bottom text</label>
-
-        <input
-          name="textBottom"
-          value={textBottom}
-          onChange={(event) => setTextBottom(event.currentTarget.value)}
-        />
-      </div>
-
-      <div className="meme">
-        <label htmlFor="memeTemplate">Meme template</label>
-
-        <input
-          name="memeTemplate"
-          value={memeId}
-          onChange={(event) => setMemeId(event.currentTarget.value)}
-          onKeyDown={handleKeyDown}
-        />
-      </div>
-
-      <div className="imageContainer">
-        <img src={urlImage} alt="" data-test-id="meme-image" />
-      </div>
-
-      <button className="downLoad" onClick={handleDownload}>
-        Download
-      </button>
     </div>
   );
 }
